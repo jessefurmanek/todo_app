@@ -1,19 +1,19 @@
-== README
+== Todo App
 
-This is a basic Rails Todo application with an API that (hopefully) satisfies the following requirements:
+This is a basic Rails Todo application with an API that (hopefully) allows for the following functionality:
 
-*Create a new todo item for a given user with a due date
-*Mark a todo item as complete
-*Retrieve the todo items for a given user
-*Retrieve the incomplete todo items for a given user
+* Create a new todo item for a given user with a due date
+* Mark a todo item as complete
+* Retrieve the todo items for a given user
+* Retrieve the incomplete todo items for a given user
 
 In addition, the app should meet the following requirements:
 
-*All data must be persisted in some manner
-*Both requests and responses must be represented as JSON
+* All data must be persisted in some manner
+* Both requests and responses must be represented as JSON
 
 But thankfully:
-*Neither authentication nor authorization are required
+* Neither authentication nor authorization are required
 
 Look to sample_requests.txt for example API calls.
 

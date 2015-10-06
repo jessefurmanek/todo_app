@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<body>
+
+  <% @user.todos.each do |todo| %>
+    <%=link_to todo.task, todo%>
+    <br>
+  <% end %>
+	
+
+</body>
+</html>

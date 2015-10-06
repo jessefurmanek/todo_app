@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+<body>
+    <%=@todo.task%>
+    <%=@todo.user.name%>
+    <%=@todo.complete%>
+    <%=link_to @todo.id, @todo%>
+    <%=link_to "edit", controller: "todos", id: @todo, action: "edit" %>
+    <%=link_to "delete", @todo, method: "delete" %>
+
+    <br>
+    <br>
+    <%= link_to "All Todos", '/todos' %>
+
+
+</body>
+</html>

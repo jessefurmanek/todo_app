@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<body>
+
+	<%= form_for (@todo) do |t| %> 
+		<div class="field"> <%= t.label :task %><br> <%= t.text_field :task %> </div> 
+		<div class="field"> <%= t.label :user_id %><br> <%= t.text_field :user_id %> </div>
+		<div class="field"> <%= t.label :due_date %><br> <%= t.date_field :due_date %> </div> 
+		<div class='actions'> <%= t.submit %> </div> 
+	<% end %>
+
+	<h1>All Todos</h1>
+  <% @todos.each do |todo| %>
+    	<%=todo.due_date%>
+    	<%=todo.task%>
+    	<%=todo.user.name%>
+    	<%=todo.complete%>
+    	<%=link_to todo.id, todo%>
+    	<%=link_to "edit", controller: "todos", id: todo, action: "edit" %>
+    	<%=link_to "delete", todo, method: "delete" %>
+    <br>
+  <% end %>
+	
+
+</body>
+</html>

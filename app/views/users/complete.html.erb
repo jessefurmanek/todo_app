@@ -1,0 +1,11 @@
+<!doctype html>
+<html>
+<body>
+	<% @complete_todos.each do |todo|%>	
+    <%=todo.due_date%>
+    <%=todo.task%>
+    <%=todo.user.name%>
+    <%=todo.complete%>
+  <%end%>
+</body>
+</html>

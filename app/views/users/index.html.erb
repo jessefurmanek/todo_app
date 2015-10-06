@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<body>
+
+<h1>This is my To-do list.  There are many like it but this one is mine.</h1>
+
+<h2>Create New User</h2>
+
+<%= form_for (@user) do |t| %> 
+	<div class="field"> <%= t.label :name %><br> <%= t.text_field :name %> </div> 
+	<div class='actions'> <%= t.submit %> </div> 
+<% end %>
+
+
+<h2>Current Users</h2>
+
+<% @users.each do |user| %>
+	<%= link_to user.name, user %>
+	<br>
+<% end %>
+	
+
+</body>
+</html>

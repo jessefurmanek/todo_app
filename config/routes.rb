@@ -1,4 +1,15 @@
 Rails.application.routes.draw do
+
+  root 'todos#index'
+  resources :users
+  resources :todos
+
+  get 'users/:id/incomplete' => 'users#incomplete'
+  get 'users/:id/complete' => 'users#complete'
+
+  patch 'todos/:id/complete' => 'todos#mark_complete'
+  patch 'todos/:id/incomplete' => 'todos#mark_incomplete'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

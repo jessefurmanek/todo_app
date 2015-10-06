@@ -1,13 +1,14 @@
 <!doctype html>
 <html>
 <body>
+
 	<% @incomplete_todos.each do |todo|%>	
     <%=todo.due_date%>
     <%=link_to todo.task, todo%>
     <%=todo.user.name%>
     <%=todo.complete%>
-    
     <br>
   <%end%>
+  
 </body>
 </html>

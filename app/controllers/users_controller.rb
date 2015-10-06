@@ -11,6 +11,18 @@ class UsersController < ApplicationController
 
 	end
 
+	def show
+		@user = User.where(id: params[:id]).first
+		if @user
+			respond_to do |format|
+	      format.json { render json: @user.todos}
+	      format.html # index.html.erb
+	    end
+	  else
+	  	render :json => "User does not exist", :status => 404
+	  end
+	end 	
+
 	def new
 		@user = User.new
 	end
@@ -26,6 +38,19 @@ class UsersController < ApplicationController
 			render :json => { :errors => @user.errors.as_json }, :status => 42
 		end
 	end
+
+	def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+  	@user = User.find(params[:id])
+    if @user.update_attributes(user_params)
+     redirect_to @user
+    else
+    	render 'home'
+    end
+  end
 
 	def incomplete
 		@user = User.where(id: params[:id]).first
@@ -45,32 +70,7 @@ class UsersController < ApplicationController
       format.json { render json: @complete_todos}
       format.html 
     end
-	end
-
-	def show
-		@user = User.where(id: params[:id]).first
-		if @user
-			respond_to do |format|
-	      format.json { render json: @user.todos}
-	      format.html # index.html.erb
-	    end
-	  else
-	  	render :json => "User does not exist", :status => 404
-	  end
-	end 
-
-	def edit
-    @user = User.find(params[:id])
-  end
-
-  def update
-  	@user = User.find(params[:id])
-    if @user.update_attributes(user_params)
-     redirect_to @user
-    else
-    	render 'home'
-    end
-  end
+	end  
 
 	private 
 		def user_params

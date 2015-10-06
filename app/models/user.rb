@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
 	validates_uniqueness_of :name
 	before_save :downcase_name
 
-	  #makes name lower-case
+	#makes name lowercase when save to assure uppercase and lowercase names == the same username
   def downcase_name
     if self.name
     	self.name = 	name.downcase

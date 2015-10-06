@@ -8,11 +8,7 @@ class TodosController < ApplicationController
 	    format.html 
     end
 	end
-
-	def new
-		@todo = Todo.new
-	end
-
+	
 	def show
 		@todo = Todo.find_by(id: params[:id])
 
@@ -24,6 +20,10 @@ class TodosController < ApplicationController
 	  else
 	  	render :json => "Task does not exist", :status => 404
 	  end
+	end	
+
+	def new
+		@todo = Todo.new
 	end
 
 	def create

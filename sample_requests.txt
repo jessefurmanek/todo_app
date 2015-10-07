@@ -29,3 +29,6 @@ curl -H "Accept: application/json" -H "Content-type: application/json" -X PATCH 
 
 #add a new record
 curl -H "Accept: application/json" -H "Content-type: application/json" -d '{"todo":{"user_id":1,"task":"Test API Creation via cURL","due_date":"2015-10-7"}}' -X POST "http://localhost:3000/todos/"
+
+#add a new user
+curl -H "Accept: application/json" -H "Content-type: application/json" -d '{"user":{"name":"Jason"}}' -X POST "http://localhost:3000/users/"

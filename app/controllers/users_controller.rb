@@ -35,7 +35,10 @@ class UsersController < ApplicationController
 
 		if @user.valid?
 			@user.save
-			redirect_to @user
+			respond_to do |format|
+	      format.json { render json: @user}
+	      format.html {redirect_to @user}
+	    end		
 		else
 			render :json => { :errors => @user.errors.as_json }, :status => 42
 		end

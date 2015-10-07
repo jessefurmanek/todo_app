@@ -1,14 +1,32 @@
 <!doctype html>
 <html>
 <body>
-
-	<% @incomplete_todos.each do |todo|%>	
-    <%=todo.due_date%>
-    <%=link_to todo.task, todo%>
-    <%=todo.user.name%>
-    <%=todo.complete%>
-    <br>
-  <%end%>
-  
+	<div class = "container">
+		<h1><%=@user.name%>'s incomplete todos  <i class="fa fa-frown-o"></i></h1>
+	  <div class = "row todo_header">
+		  <div class= "col-xs-2"></div>
+		  <div class= "col-xs-2">Due Date</div>
+		  <div class= "col-xs-3">Task</div>
+		  <div class= "col-xs-1">Complete?</div>
+		  <div class= "col-xs-1">Task ID</div>
+		  <div class= "col-xs-1">Edit/Delete</div>
+		  <div class= "col-xs-2"></div>
+		</div>
+	
+		<% @incomplete_todos.each do |todo|%>	
+			<div class = "row">
+				<div class= "col-xs-2"></div>
+		  	<div class= "col-xs-2"><%=todo.due_date%></div>
+		  	<div class= "col-xs-3"><%=todo.task%></div>
+		  	<div class= "col-xs-1"><%=todo.complete%></div>
+		  	<div class= "col-xs-1"><%=link_to todo.id, controller: "todos", id: todo.id, action: "show" %></div>
+		  	<div class= "col-xs-1">
+		    	<%=link_to "edit", controller: "todos", id: todo, action: "edit" %>
+		  		<%=link_to "delete", todo, method: "delete" %>
+		  	</div>
+		  	<div class= "col-xs-2"></div>
+		  </div>
+	  <%end%>
+	</div>	  
 </body>
 </html>

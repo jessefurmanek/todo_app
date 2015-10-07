@@ -3,6 +3,7 @@
 <body>	
 	<div class = "container">
 		<h1><%=@todo.task%></h1>
+		<br>
 	  <div class = "row todo_header">
 		  <div class= "col-xs-2"></div>
 		  <div class= "col-xs-2">Due Date</div>
@@ -18,7 +19,7 @@
 	      <div class= "col-xs-2"></div>
 	    	<div class= "col-xs-2"><%=@todo.due_date%></div>
 	    	<div class= "col-xs-2"><%=@todo.task%></div>
-	    	<div class= "col-xs-1"><%=@todo.user.name%></div>
+	    	<div class= "col-xs-1"><%=link_to @todo.user.name, controller: "users", id: @todo.user.id, action: "show" %></div>
 	    	<div class= "col-xs-1"><%=@todo.complete%></div>
 	    	<div class= "col-xs-1"><%=link_to @todo.id, @todo%></div>
 	    	<div class= "col-xs-1">

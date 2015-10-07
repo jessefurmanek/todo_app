@@ -1,8 +1,28 @@
-<h1>Edit Todo</h1>
-  <%= form_for(@todo) do |t| %>
-      <%= t.text_field :task, label: "Task" %>
-      <%= t.date_field :due_date %>
-      <%= t.check_box :complete %>
-      <%= t.submit "Update Todo", class: "btn" %>
-    <% end %>
-</div>
+<!doctype html>
+<html>
+<body>
+		<div class = "container">
+			<h1>Edit Todo</h1>
+		  <div class = "row todo_header">
+			  <div class= "col-xs-3"></div>
+			  <div class= "col-xs-2">Due Date</div>
+			  <div class= "col-xs-2">Task</div>
+			  <div class= "col-xs-1">Complete?</div>
+			  <div class= "col-xs-1"></div>
+			  <div class= "col-xs-3"></div>
+			</div>
+
+			<div class = "row">
+				<%= form_for(@todo) do |t| %>
+		      <div class= "col-xs-3"></div>
+		    	<div class= "col-xs-2"><%= t.date_field :due_date %></div>
+		    	<div class= "col-xs-2"><%= t.text_field :task, label: "Task" %></div>
+		    	<div class= "col-xs-1"><%= t.check_box :complete %></div>
+		    	<div class= "col-xs-1"><%= t.submit "Update Todo", class: "btn" %></div>
+		      <div class= "col-xs-3"></div>
+		    <% end %>
+		   </div>
+		</div>
+	</div>
+</body>
+</html>

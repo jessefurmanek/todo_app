@@ -21,7 +21,7 @@
 	    	<div class= "col-xs-2"><%=todo.due_date%></div>
 	    	<div class= "col-xs-3"><%=todo.task%></div>
 	    	<div class= "col-xs-1"><%=todo.complete%></div>
-	    	<div class= "col-xs-1"><%=link_to todo.id, todo%></div>
+	    	<div class= "col-xs-1"><%=link_to todo.id, controller: "todos", id: todo.id, action: "show" %></div>
 	    	<div class= "col-xs-1">
 	      	<%=link_to "edit", controller: "todos", id: todo, action: "edit" %>
 	    		<%=link_to "delete", todo, method: "delete" %>

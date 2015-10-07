@@ -3,12 +3,13 @@ class TodosController < ApplicationController
 	def index
 		@todo = Todo.new
 		@todos = Todo.all
+
 		respond_to do |format|
 	    format.json { render json: @todos}
 	    format.html 
     end
 	end
-	
+
 	def show
 		@todo = Todo.find_by(id: params[:id])
 
@@ -70,7 +71,7 @@ class TodosController < ApplicationController
 
 		respond_to do |format|
       format.json { render json: @todos}
-      format.html { redirect_to(todos_path) }
+      format.html { redirect_to(:back) }
   	end		
 
 	end

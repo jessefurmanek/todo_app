@@ -5,11 +5,27 @@
 	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>    
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <%= favicon_link_tag %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 
 </head>
 <body>
+	<div class="header">
+		<div class = "container">
+			<div class = "row">
+				<div class = "col-xs-8">
+			  	<%= link_to image_tag("tc_logo_words.png", :class => "title_logo"), todos_path %>
+			  	<i class="fa fa-check-square-o checkmark"></i>
+			  </div>
+			  <div class = "col-xs-2"></div>
+			  <div class = "col-xs-1 navigation"><%= link_to "Users", users_path %></div>
+			  <div class = "col-xs-1 navigation"><%= link_to "Todos", todos_path %></div>
+
+		  </div>
+	  </div>
+	 </div>
 
 <%= yield %>
 

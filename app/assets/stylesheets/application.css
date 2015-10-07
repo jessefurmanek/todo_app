@@ -13,3 +13,35 @@
  *= require_tree .
  *= require_self
  */
+
+
+.header{
+	background-color: #151E28;
+  height: 10vh;
+	display: flex;
+	align-items: center; 
+}
+
+.title_logo{
+	height: 4vw;
+}
+
+.checkmark{
+	color:#7CC193;
+	font-size:4em;
+	vertical-align: bottom;
+}
+
+.todo_header{
+	font-weight: bold;
+}
+
+.navigation{
+	margin-top: 1.3em;
+	color:#7CC193;
+}
+.navigation a{
+	letter-spacing: 1px;
+	font-weight: bold;
+	color:#7CC193;
+}

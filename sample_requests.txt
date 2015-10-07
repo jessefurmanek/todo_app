@@ -7,13 +7,16 @@
 curl -H "Accept: application/json" -H "Content-type: application/json" -X GET http://localhost:3000/
 
 #show todos for a given user
-curl -H "Accept: application/json" -H "Content-type: application/json" -X GET http://localhost:3000/users/4
+curl -H "Accept: application/json" -H "Content-type: application/json" -X GET http://localhost:3000/users/1
 
 #show todo item
 curl -H "Accept: application/json" -H "Content-type: application/json" -X GET http://localhost:3000/todos/5
 
 #show completed items
-curl -H "Accept: application/json" -H "Content-type: application/json" -X GET http://localhost:3000/users/4/complete
+curl -H "Accept: application/json" -H "Content-type: application/json" -X GET http://localhost:3000/users/1/complete
+
+#show incomplete items
+curl -H "Accept: application/json" -H "Content-type: application/json" -X GET http://localhost:3000/users/1/incomplete
 
 #update task
 curl -X PATCH -H "Content-Type: application/json" -d '{"todo":{"task":"New Task Name","complete":1,"due_date":"2042-04-03"}}' http://localhost:3000/todos/5	
@@ -25,4 +28,4 @@ curl -H "Accept: application/json" -H "Content-type: application/json" -X PATCH 
 curl -H "Accept: application/json" -H "Content-type: application/json" -X PATCH "http://localhost:3000/todos/12/incomplete"
 
 #add a new record
-curl -H "Accept: application/json" -H "Content-type: application/json" -d '{"todo":{"user_id":2,"task":"Test API Creaion Part Two","due_date":"2015-12-31"}}' -X POST "http://localhost:3000/todos/"
+curl -H "Accept: application/json" -H "Content-type: application/json" -d '{"todo":{"user_id":1,"task":"Test API Creation via cURL","due_date":"2015-10-7"}}' -X POST "http://localhost:3000/todos/"

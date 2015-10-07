@@ -12,7 +12,8 @@ class UsersController < ApplicationController
 	end
 
 	def show
-		@user = User.where(id: params[:id]).first
+		@user = User.find_by(id: params[:id])
+
 		if @user
 			respond_to do |format|
 	      format.json { render json: @user.todos}
@@ -21,11 +22,12 @@ class UsersController < ApplicationController
 	  else
 	  	render :json => "User does not exist", :status => 404
 	  end
-	end 	
+	end	
 
 	def new
 		@user = User.new
 	end
+
 
 	def create
 		@user = User.new(user_params)
